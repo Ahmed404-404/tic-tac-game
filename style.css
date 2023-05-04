@@ -1,0 +1,109 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: #FDE2F3;
+    font-family: 'Pacifico', cursive;
+    display: grid;
+    place-content: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+h1{
+    text-transform: uppercase;
+    font-size: 1.9rem;
+    color: #2A2F4F;
+}
+h2{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    color: #2A2F4F;
+}
+h2 span{
+    color: #8d74bb;
+}
+.game{
+    display: grid;
+    grid-template-columns: repeat(3,100px);
+    grid-template-rows: repeat(3,100px);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.game .cell{
+    background-color: #E5BEEC;
+    display: grid;
+    place-content: center;
+    border: 1px solid #917FB3;
+    cursor: pointer;
+    font-size: 1.9rem;
+    color: #2A2F4F;
+    transition: 0.3s;
+    position: relative;
+}
+.game .cell:hover{
+    background-color: #917FB3;
+}
+.game .cell:hover::after{
+    content: attr(data-content);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 15px;
+    aspect-ratio: 1;
+    transition: content 0.3s;
+    color: #FDE2F3;
+}
+dialog{
+    width: 100%;
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 2em;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 0.5em;
+}
+dialog::backdrop{
+    background: rgba(0, 0, 0, 0.452);
+}
+dialog p{
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #2A2F4F;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+dialog p span{
+    color: #8d74bb;
+}
+dialog button{
+    all: unset;
+    padding: 0.5em 2em;
+    border-radius: 0.2em;
+    background-color: #2A2F4F;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    transition: 0.3s;
+}
+dialog button:hover{
+    background-color: #060916;
+    transform: skew(-5deg, 5deg) scale(1.2);
+}
+dialog button img{
+    width: 25px;
+}
